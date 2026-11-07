@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Word Form · Cấu tạo từ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9e9e0;--paper:#fcf3ed;--ink:#4a2038;--mut:#8a5a74;--pk:#ff4f9a;--line:#f2c6d8;--sh:#ff8cbc;--ok:#1d7a52;--okbg:#dcf3e6;--no:#b8344d;--nobg:#fde0e7;--dot:rgba(255,79,154,.13);color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#26121f;--paper:#34192b;--ink:#ffe0ee;--mut:#d8a3bd;--pk:#ff74b2;--line:#5c2d49;--sh:#a33a72;--ok:#6fd1a6;--okbg:#17352a;--no:#ff8aa0;--nobg:#3d1b26;--dot:rgba(255,116,178,.1)}}
+:root[data-theme="dark"]{--bg:#26121f;--paper:#34192b;--ink:#ffe0ee;--mut:#d8a3bd;--pk:#ff74b2;--line:#5c2d49;--sh:#a33a72;--ok:#6fd1a6;--okbg:#17352a;--no:#ff8aa0;--nobg:#3d1b26;--dot:rgba(255,116,178,.1)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:400 16px/1.7 "Be Vietnam Pro",system-ui,sans-serif;background:var(--bg);background-image:radial-gradient(var(--dot) 1.2px,transparent 1.4px);background-size:9px 9px;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.lf{position:absolute;mix-blend-mode:multiply;will-change:transform;animation:bob 9s ease-in-out infinite alternate}
+@keyframes bob{to{margin-top:16px;margin-left:-8px}}
+.fw{position:absolute;will-change:transform;animation:bob 11s ease-in-out infinite alternate-reverse}
+main{position:relative;z-index:1}
+.hd{font-family:"Baloo 2","Be Vietnam Pro",sans-serif;font-weight:800;color:var(--pk);line-height:1;margin:0 0 14px;letter-spacing:-.01em}
+.hero{min-height:94vh;display:flex;flex-direction:column;justify-content:center;padding:36px 24px;max-width:900px;margin:0 auto}
+.hero h1{font-size:clamp(84px,25vw,230px);text-transform:uppercase;margin:0;mix-blend-mode:multiply;line-height:.82}
+.hero p{margin:26px 0 0;max-width:330px;color:var(--ink);font-weight:500}
+.hero small{margin-top:14px;color:var(--pk);font-family:"Baloo 2";font-weight:600;letter-spacing:.08em}
+.card{max-width:760px;margin:44px 16px;padding:34px 28px 28px;background:var(--paper);border:3px solid var(--pk);border-radius:22px;box-shadow:8px 8px 0 var(--sh)}
+@media(min-width:808px){.card{margin-left:auto;margin-right:auto}}
+h2.hd{font-size:clamp(28px,6vw,40px);text-transform:uppercase}h3.hd{font-size:23px}
+p{margin:0 0 12px}.mut{color:var(--mut)}
+b.r{color:var(--pk);font-weight:600}
+.wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:15px}
+td,th{padding:9px 10px;border-top:2px dotted var(--line);text-align:left;vertical-align:top}
+th{font-weight:600;font-size:13px;color:var(--mut);border-top:0}
+td:last-child{color:var(--pk);font-weight:500}
+.note{border-left:4px solid var(--pk);padding:2px 0 2px 16px;margin:14px 0}
+.spell{font-family:"Baloo 2";font-weight:800;font-size:clamp(20px,5vw,30px);color:var(--pk);text-align:center;margin:12px 0;line-height:1.2}
+ol{padding-left:22px;margin:6px 0 12px}li{margin-bottom:6px}
+.chip{display:inline-block;padding:1px 10px;margin:2px 4px 2px 0;border-radius:99px;background:var(--pk);color:#fff;font-size:14px;font-weight:600}
+:root:not([data-theme="light"]) .chip{color:#2a0f1e}
+.q{padding:20px 0;border-top:2px dotted var(--line)}
+.q:first-of-type{border-top:0}
+.qn{font-family:"Baloo 2",sans-serif;font-weight:800;color:var(--pk);margin-right:8px;font-size:20px}
+.sent{font-size:17px;margin-bottom:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+textarea{flex:1 1 260px;min-width:0;font:inherit;padding:10px 14px;border-radius:14px;border:2px solid var(--line);background:transparent;color:var(--ink);resize:none;height:64px}
+textarea:focus,button:focus-visible{outline:2px solid var(--pk);outline-offset:2px}
+button{font:inherit;cursor:pointer;color:inherit}
+.go{padding:10px 22px;border:0;border-radius:99px;background:var(--pk);color:#fff;font-weight:600;transition:transform .15s}
+.go:hover{transform:translateY(-2px) rotate(-1deg)}
+:root:not([data-theme="light"]) .go{color:#2a0f1e}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:11px 16px;border-radius:16px;border:2px solid var(--line);background:transparent;transition:transform .15s,border-color .2s,background .3s}
+.opt:hover:not(:disabled){border-color:var(--pk);transform:translateX(4px)}
+.opt .l{display:inline-block;width:24px;color:var(--pk);font-weight:700}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.no{background:var(--nobg);border-color:var(--no);animation:shake .4s}
+.opt:disabled{cursor:default}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+textarea.ok{border-color:var(--ok);background:var(--okbg)}
+textarea.no{border-color:var(--no);background:var(--nobg);animation:shake .4s}
+.fb{display:none;margin-top:12px;padding:14px 16px;border-radius:16px;font-size:15px}
+.fb.show{display:block;animation:pop .45s cubic-bezier(.2,1.3,.4,1)}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}}
+.fb.ok{background:var(--okbg)}.fb.no{background:var(--nobg)}
+.fb strong.ok{color:var(--ok)}.fb strong.no{color:var(--no)}
+.fb .ans{font-size:17px;margin:4px 0;font-weight:500}
+.reveal{opacity:0;transform:translateY(34px) rotate(.6deg);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.pill{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:5;padding:8px 16px;border-radius:99px;background:var(--pk);color:#fff;font-size:14px;font-weight:600;box-shadow:4px 4px 0 var(--sh)}
+:root:not([data-theme="light"]) .pill{color:#2a0f1e}
+.score{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:76px;color:var(--pk);line-height:1}
+.center{text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <svg class="lf" id="a1" style="left:-12vw;top:34vh;width:min(70vw,380px)" viewBox="0 0 200 200"></svg>
+  <svg class="lf" id="a2" style="right:-14vw;top:6vh;width:min(56vw,300px);animation-delay:-3s" viewBox="0 0 200 200"></svg>
+  <svg class="lf" id="a3" style="right:-8vw;bottom:-6vh;width:min(66vw,340px);animation-delay:-6s" viewBox="0 0 200 200"></svg>
+  <svg class="fw" id="b1" style="left:6vw;top:62vh;width:min(26vw,120px)" viewBox="0 0 120 120"></svg>
+  <svg class="fw" id="b2" style="right:10vw;top:40vh;width:min(22vw,100px)" viewBox="0 0 120 120"></svg>
+</div>
+<main>
+<section class="hero reveal">
+  <h1 class="hd">Word<br>Form</h1>
+  <p>Cấu tạo từ: bí kíp làm bài thi tuyển sinh vào lớp 10. Lý thuyết, 20 câu trắc nghiệm và 20 câu trả lời ngắn có đáp án ngay.</p>
+  <small>FLEUR DE LOTUS · 蓮の花</small>
+</section>
+<div id="theory"></div>
+<section class="card reveal"><h2 class="hd">Bài tập 1 · Trắc nghiệm</h2>
+<p class="mut">20 câu lý thuyết. Chọn đáp án đúng nhất.</p><div id="mcq"></div></section>
+<section class="card reveal"><h2 class="hd">Bài tập 2 · Trả lời ngắn</h2>
+<p class="mut">20 câu. Gõ ngắn gọn, có thể dùng tiếng Việt hoặc tiếng Anh (ví dụ “danh từ” hoặc “noun”), rồi nhấn Enter.</p><div id="essay"></div></section>
+<section class="card center reveal"><h2 class="hd">Kết quả của bạn</h2><div class="score" id="final">0/40</div>
+<p class="mut" id="msg">Làm hết các câu để xem tổng kết.</p><button class="go" onclick="location.reload()">Làm lại từ đầu</button></section>
+</main>
+<div class="pill" id="pill">Đúng 0 / 0</div>
+
+<script>
+const P=[
+{t:"1. Động từ (Verb)",d:`<p>Khi điền động từ, phải chú ý <b class="r">chia thì và ngôi</b> cho đúng.</p>`,h:["Vị trí / cấu trúc","Ví dụ"],e:[["Đứng trước hoặc sau trạng từ","She carefully drove the car. / He speaks English fluently."],["Đứng ngay sau chủ ngữ (S + V + O)","The company produces high-quality goods."],["S + have/has + V3/ed + O (hiện tại hoàn thành)","I have completed my assignment."],["S + to be + V-ing + O (tiếp diễn)","They are building a new bridge."],["S + to be + V3/ed + (by O) (bị động)","The letter was written by Nam."],["S + spend/waste + time + V-ing","She spends 2 hours reading books."],["S + suggest + V-ing","He suggested going to the cinema."],["S + help + O + V1","My mom helps me do my homework."]]},
+{t:"2. Trạng từ (Adverb)",d:`<p>Thường có đuôi <b class="r">-ly</b> (tính từ + ly). Bổ nghĩa cho động từ, tính từ hoặc trạng từ khác.</p>`,h:["Vị trí / cấu trúc","Ví dụ"],e:[["Đứng trước hoặc sau động từ thường","He runs quickly. / She carefully checked the report."],["Đứng trước tính từ: S + V + ADV + ADJ (chỉ mức độ)","The test is extremely difficult."],["Đứng đầu câu, trước 1 mệnh đề: ADV, S + V + O","Luckily, he passed the exam."],["Đứng giữa to be và V3/ed: Be + ADV + V3/ed","The house was beautifully decorated."],["Đứng sau tân ngữ: S + V + O + ADV","She speaks English fluently."],["V thường + too/so/very/more/as + ADV","He drives very carefully."]]},
+{t:"3. Tính từ (Adjective)",d:``,h:["Vị trí / cấu trúc","Ví dụ"],e:[["Đứng trước danh từ: a/an/the + ADJ + N","She is a beautiful girl."],["Đứng sau trạng từ: S + V + ADV + ADJ","The lesson is very interesting."],["Sau to be và linking verbs (look, feel, seem, become, taste, smell, sound, turn…)","You look tired today. / The food tastes delicious."],["to be + too/so/very/more/as + ADJ","The weather is too hot."],["S + make / keep / find / leave + O + ADJ","The news made her happy. / I find this book useful."]]},
+{t:"4. Danh từ (Noun)",d:`<p>Phải chú ý <b class="r">số ít hay số nhiều, đếm được hay không đếm được, chỉ người hay chỉ vật</b>.</p>`,h:["Vị trí / cấu trúc","Ví dụ"],e:[["Đứng sau tính từ: S + V + ADJ + N","He is a good student."],["Sau mạo từ / từ chỉ định: a, an, the, this, that, these, those","I want to buy this book."],["Sau tính từ sở hữu: my, our, their, her, his…","This is my decision."],["Sau giới từ: in, on, of, at, with, without, by…","He is interested in science."],["Sau some / many / a lot of / a few + N số nhiều; much / a lot of / a little + N không đếm được","Many students are playing. / I need some water."],["Sau một số động từ thường: buy, bring, give, have, want, need, remain, find, take…","I need some information."],["Đứng trước hoặc sau danh từ khác (danh từ ghép)","application form, beauty contest, washing machine, energy efficiency"]]}];
+document.getElementById("theory").innerHTML=`<section class="card reveal"><h2 class="hd">Phần 1 · Chiến thuật chung</h2>
+<p><b class="r">Cách làm:</b> nhìn trước và nhìn sau ô trống để xác định cần điền từ loại gì (động từ, trạng từ, tính từ hay danh từ).</p>
+<p>Thần chú vị trí:</p><div class="spell">TRẠNG ➤ ĐỘNG ➤ TRẠNG ➤ TÍNH ➤ DANH</div>
+<h3 class="hd">3 chú ý cốt lõi</h3>
+<div class="note"><p><b>Điền động từ:</b> bắt buộc chia thì và ngôi cho phù hợp với chủ ngữ (thường là hiện tại đơn hoặc quá khứ đơn). VD: He usually works late (đừng quên “s”).</p></div>
+<div class="note"><p><b>Điền tính từ / trạng từ:</b> nên dịch câu ra tiếng Việt để xem có cần từ trái nghĩa (thêm un-, dis-, im-…) hay không. VD: It was an unforgettable memory (kỷ niệm không thể quên).</p></div>
+<div class="note"><p><b>Điền danh từ:</b> cẩn thận lấy số ít hay số nhiều (với danh từ đếm được), và xem đó là danh từ chỉ người hay chỉ vật. VD: Many students (phải có “s”).</p></div></section>
+<section class="card reveal"><h2 class="hd">Phần 2 · Từng từ loại</h2><p class="mut">Bốn từ loại, mỗi loại có vị trí đặc trưng riêng. Cuộn xuống để xem từng bảng.</p></section>`+
+P.map(x=>`<section class="card reveal"><h3 class="hd">${x.t}</h3>${x.d}<div class="wrap"><table><tr><th>${x.h[0]}</th><th>${x.h[1]}</th></tr>${x.e.map(r=>`<tr><td style="color:inherit;font-weight:400">${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table></div></section>`).join("")+
+`<section class="card reveal"><h3 class="hd">Dấu hiệu nhận biết qua hậu tố</h3>
+<p><b>Danh từ chỉ người:</b> <span class="chip">-er</span><span class="chip">-or</span><span class="chip">-ist</span><span class="chip">-ee</span><span class="chip">-ian</span><span class="chip">-ant</span><span class="chip">-ent</span></p>
+<p><b>Danh từ (sự / trạng thái / phẩm chất):</b> <span class="chip">-tion</span><span class="chip">-sion</span><span class="chip">-ment</span><span class="chip">-ness</span></p>
+<p><b>Tính từ:</b> <span class="chip">-ful</span><span class="chip">-less</span><span class="chip">-al</span><span class="chip">-ic</span><span class="chip">-ous</span><span class="chip">-ive</span><span class="chip">-able</span></p>
+<p><b>Trạng từ:</b> <span class="chip">-ly</span> (tính từ + ly)</p>
+<p><b>Động từ:</b> <span class="chip">-ize / -ise</span><span class="chip">-en</span><span class="chip">-ify</span></p></section>`;
+
+/* [câu hỏi, 4 phương án, đáp án 0-3, giải thích] */
+const M=[
+["Trật tự (vị trí) cơ bản nhất của 4 loại từ chính trong tiếng Anh thường tuân theo nguyên tắc nào?",["DANH - TÍNH - ĐỘNG - TRẠNG - TRẠNG","TRẠNG - ĐỘNG - TRẠNG - DANH - TÍNH","TRẠNG - ĐỘNG - TRẠNG - TÍNH - DANH","TÍNH - DANH - ĐỘNG - TRẠNG - TRẠNG"],2,"Thần chú vị trí: TRẠNG ➤ ĐỘNG ➤ TRẠNG ➤ TÍNH ➤ DANH."],
+["Khi chỗ trống đứng ngay sau mạo từ (a, an, the) hoặc từ chỉ định (this, that, these, those), ta bắt buộc điền loại từ gì?",["Động từ","Trạng từ","Tính từ","Danh từ"],3,"Sau mạo từ / từ chỉ định là danh từ (hoặc tính từ + danh từ, nhưng đề hỏi vị trí ngay sau)."],
+["Trong cấu trúc “S + to be + (too/so/very) + ____”, chỗ trống thường là loại từ nào?",["Danh từ","Động từ","Tính từ","Giới từ"],2,"to be + too/so/very/more/as + ADJ. Ví dụ: The weather is too hot."],
+["“Bổ nghĩa cho động từ thường, tính từ hoặc cả câu” là chức năng của từ loại nào?",["Trạng từ","Tính từ","Danh từ","Đại từ"],0,"Trạng từ bổ nghĩa cho động từ, tính từ, trạng từ khác hoặc cả câu."],
+["Hậu tố nào KHÔNG phải là dấu hiệu điển hình của danh từ chỉ người?",["-ist","-er / -or","-ify","-ee"],2,"-ify là đuôi của động từ. Danh từ chỉ người: -er, -or, -ist, -ee, -ian, -ant, -ent."],
+["Đứng trước một danh từ, ta thường điền từ loại nào để bổ nghĩa cho nó?",["Giới từ","Tính từ","Động từ","Trạng từ"],1,"Tính từ đứng trước danh từ: a/an/the + ADJ + N."],
+["Khi chỗ trống cần điền một động từ, ngoài việc chọn đúng từ, ta còn phải đặc biệt lưu ý điều gì?",["Xem danh từ đếm được hay không đếm được","Có thêm đuôi -ly hay không","Thêm tiền tố un- hoặc dis-","Chia thì (tense) và sự hòa hợp chủ vị"],3,"Điền động từ phải chia thì và ngôi. VD: He usually works late (đừng quên “s”)."],
+["Sau các động từ liên kết (linking verbs) như look, feel, seem, become, taste… ta phải dùng loại từ gì?",["Danh từ","Trạng từ","Động từ","Tính từ"],3,"Linking verbs + tính từ. VD: The food tastes delicious."],
+["Đuôi “-ize” hoặc “-ise” (modernize, realize) là dấu hiệu của loại từ nào?",["Tính từ","Trạng từ","Danh từ","Động từ"],3,"-ize / -ise / -en / -ify là đuôi của động từ."],
+["Trong cấu trúc “S + make / keep / find / leave + Object + ____”, chỗ trống cần điền là gì?",["Động từ","Tính từ","Danh từ","Trạng từ"],1,"make / keep / find / leave + O + ADJ. VD: The news made her happy."],
+["Hậu tố nào thường biến tính từ thành danh từ mang nghĩa “sự / trạng thái / phẩm chất” (happy → happi…)?",["-tion","-ness","-ment","-able"],1,"happy → happiness. -ness chuyển tính từ thành danh từ chỉ trạng thái."],
+["Khi điền danh từ đứng sau many, several, a few, these, ta bắt buộc phải chú ý điều gì?",["Thêm tiền tố","Đổi thành V-ing","Chuyển thành trạng từ","Đổi thành số nhiều (thêm -s/-es)"],3,"Sau many / a few / these là danh từ đếm được số nhiều."],
+["Đuôi “-ful” và “-less” là dấu hiệu rất phổ biến của loại từ nào?",["Động từ","Trạng từ","Danh từ","Tính từ"],3,"useful, helpless… -ful (đầy) và -less (không có) là đuôi tính từ."],
+["Vị trí nào sau đây là vị trí đặc trưng của trạng từ?",["Đứng ngay sau mạo từ “the”","Đứng giữa chủ ngữ và động từ to be","Đứng ngay sau tính từ sở hữu (my, your)","Đứng giữa to be và phân từ 2 (V3/ed)"],3,"Be + ADV + V3/ed. VD: The house was beautifully decorated. Hai vị trí kia dành cho danh từ / tính từ."],
+["Đuôi “-tion” hoặc “-sion” thường biến động từ thành loại từ gì?",["Danh từ","Trạng từ","Tính từ","Động từ nguyên mẫu"],0,"-tion / -sion / -ment / -ness là đuôi danh từ."],
+["Khi dịch câu ra mang nghĩa phủ định (không thể tin được, không vui…), ta cần làm gì với từ gốc?",["Thêm tiền tố phủ định (un, dis, in, im…)","Thêm hậu tố -ly","Chuyển thành dạng bị động","Chia về quá khứ"],0,"Dịch câu để xem có cần từ trái nghĩa. VD: unforgettable = không thể quên."],
+["Trong cấu trúc “Giới từ (in, on, at, of…) + ____”, chỗ trống chỉ có thể là:",["Tính từ hoặc trạng từ","Mệnh đề hoàn chỉnh","Động từ nguyên mẫu","Danh từ hoặc động từ V-ing"],3,"Sau giới từ là danh từ hoặc V-ing. VD: interested in science."],
+["Hậu tố nào là đuôi của động từ mang nghĩa “làm cho, hóa”?",["-ce","-able","-ity","-en"],3,"-en (widen, shorten) cùng -ize / -ise / -ify là đuôi động từ. -able là tính từ, -ity là danh từ."],
+["Từ loại nào có thể đứng đầu câu, ngăn cách mệnh đề chính bằng dấu phẩy (____, S + V + O) để bổ nghĩa cho cả câu?",["Danh từ","Trạng từ","Giới từ","Tính từ"],1,"ADV, S + V + O. VD: Luckily, he passed the exam."],
+["Sau các từ chỉ lượng như much, a lot of, a little, danh từ theo sau phải có đặc điểm gì?",["Là danh từ chỉ người","Là danh từ số nhiều đếm được","Là danh từ không đếm được","Là danh từ luôn có đuôi -s"],2,"much / a little + danh từ không đếm được. VD: I need some water."]];
+
+/* [câu hỏi, đáp án hiển thị, nhóm từ khóa (mỗi nhóm là các cách viết tương đương), số nhóm cần đạt, giải thích] */
+const A=[
+["Kể tên 3 hậu tố phổ biến dùng để nhận biết một danh từ chỉ người.","-er, -or, -ist, -ee, -ian, -ant, -ent (kể 3 trong số này).",[["er"],["or"],["ist"],["ee"],["ian"],["ant"],["ent"]],3,"Ví dụ: teacher, actor, scientist, employee, musician, assistant, student."],
+["Từ cần điền đứng ngay sau tính từ sở hữu (my, your, his, her, our, their, its) chắc chắn là loại từ gì?","Danh từ (Noun).",[["danh tu","noun","n"]],1,"Ví dụ: This is my decision."],
+["Đứng sau động từ to be thường là hai loại từ nào?","Tính từ (Adjective) hoặc Danh từ (Noun).",[["tinh tu","adjective","adj"],["danh tu","noun","n"]],2,"Ví dụ: She is beautiful / She is a teacher."],
+["Các động từ liên kết (seem, look, feel, taste…) yêu cầu loại từ gì đi ngay sau chúng?","Tính từ (Adjective).",[["tinh tu","adjective","adj"]],1,"Ví dụ: You look tired."],
+["Để bổ nghĩa cho một động từ thường, ta phải dùng loại từ gì?","Trạng từ (Adverb).",[["trang tu","adverb","adv"]],1,"Ví dụ: He runs quickly."],
+["Chỗ trống đứng giữa câu, trước một tính từ (The test is ____ difficult), cần điền loại từ gì?","Trạng từ (Adverb), để bổ nghĩa cho tính từ đó.",[["trang tu","adverb","adv"]],1,"Ví dụ: extremely difficult."],
+["Nếu chỗ trống cần điền động từ, ta bắt buộc phải chia đúng 2 yếu tố nào?","Thì (Tense) và Ngôi (sự hòa hợp chủ ngữ – động từ).",[["thi","tense"],["ngoi","hoa hop","chu ngu","chu vi","agreement","person"]],2,"Ví dụ: He usually works late, đừng quên “s”."],
+["Hậu tố “-tion”, “-ment”, “-ness” là dấu hiệu của từ loại nào?","Danh từ (Noun).",[["danh tu","noun","n"]],1,"Ví dụ: education, development, happiness."],
+["Kể tên 2 hậu tố điển hình để nhận biết tính từ mang nghĩa “đầy, nhiều” và “không có, thiếu vắng”.","-ful (đầy / nhiều) và -less (không có / thiếu).",[["ful"],["less"]],2,"Ví dụ: useful / useless."],
+["Khi điền danh từ, nếu phía trước có “many”, “a few” hoặc “these”, ta phải làm gì với danh từ đó?","Đổi danh từ đó thành số nhiều (thêm s/es).",[["so nhieu","plural","s","es"]],1,"Ví dụ: Many students are playing."],
+["Trạng từ thường được cấu tạo bằng cách thêm hậu tố gì vào sau tính từ?","Thêm hậu tố -ly (tính từ + ly = trạng từ).",[["ly"]],1,"Ví dụ: quick → quickly."],
+["Hậu tố “-ize” (“-ise”), “-en”, “-ify” thường là dấu hiệu của từ loại nào?","Động từ (Verb).",[["dong tu","verb","v"]],1,"Ví dụ: modernize, widen, simplify."],
+["Khi dịch câu, nếu ngữ cảnh mang ý nghĩa phủ định / trái ngược, ta cần thêm yếu tố gì vào trước từ gốc?","Thêm tiền tố phủ định (un-, in-, dis-, im-, ir-, il-).",[["tien to","prefix","un","in","dis","im","ir","il"]],1,"Ví dụ: unforgettable = không thể quên."],
+["Đứng ngay sau các giới từ (in, on, of, for, with…) bắt buộc phải là loại từ nào?","Danh từ (Noun) hoặc động từ thêm -ing (V-ing).",[["danh tu","noun","n"],["ing","v ing","ving"]],1,"Ví dụ: interested in science / good at swimming."],
+["Trong cấu trúc S + make / keep / find / leave + Object + ____, chỗ trống cần loại từ gì?","Tính từ (Adjective).",[["tinh tu","adjective","adj"]],1,"Ví dụ: The news made her happy."],
+["Hãy liệt kê “thần chú vị trí” của 4 loại từ cơ bản (Động, Trạng, Tính, Danh) theo thứ tự.","TRẠNG - ĐỘNG - TRẠNG - TÍNH - DANH.",[["trang dong trang tinh danh","adv verb adv adj noun","adv v adv adj n"]],1,"Nhớ: Trạng ➤ Động ➤ Trạng ➤ Tính ➤ Danh."],
+["Danh từ thường đứng ở đâu so với tính từ trong một cụm danh từ?","Danh từ đứng SAU tính từ (Tính từ + Danh từ).",[["sau","after","adj n","tinh tu danh tu","adjective noun"]],1,"Ví dụ: a good student."],
+["Đuôi “-al”, “-ic”, “-ous”, “-ive” thường là dấu hiệu của từ loại nào?","Tính từ (Adjective).",[["tinh tu","adjective","adj"]],1,"Ví dụ: national, economic, dangerous, active."],
+["Nếu chỗ trống đứng đầu câu, phân cách với mệnh đề chính bằng một dấu phẩy (____, S + V + O), đó là từ loại gì?","Trạng từ (Adverb).",[["trang tu","adverb","adv"]],1,"Ví dụ: Luckily, he passed the exam."],
+["Cho một ví dụ minh họa cấu trúc: trạng từ đứng giữa to be và V3/ed (Be + ADV + V3/ed).","VD: The house was beautifully decorated. / The problem was quickly solved.",[["/\\b(is|are|was|were|be|been|being)\\s+[a-z]+ly\\s+[a-z]+"]],1,"Trạng từ -ly nằm giữa to be và phân từ hai."]];
+
+let ok=0,done=0;const L=["A","B","C","D"],pill=document.getElementById("pill");
+function upd(){pill.textContent=`Đúng ${ok} / ${done}`;if(done===40){document.getElementById("final").textContent=ok+"/40";document.getElementById("msg").textContent=ok>=36?"Xuất sắc, bạn nắm Word Form rất chắc.":ok>=28?"Khá tốt. Xem lại những câu sai để chắc hơn.":"Đọc lại phần lý thuyết rồi thử lại nhé."}}
+let ctx;
+function snd(g){try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();const n=ctx.currentTime;(g?[[660,0],[880,.12],[1175,.24]]:[[220,0],[165,.17]]).forEach(([f,o])=>{const s=ctx.createOscillator(),v=ctx.createGain();s.type=g?"sine":"sawtooth";s.frequency.value=f;v.gain.setValueAtTime(.0001,n+o);v.gain.exponentialRampToValueAtTime(g?.2:.12,n+o+.02);v.gain.exponentialRampToValueAtTime(.0001,n+o+.3);s.connect(v);v.connect(ctx.destination);s.start(n+o);s.stop(n+o+.32)})}catch(e){}}
+function mark(g){done++;if(g)ok++;snd(g);upd()}
+const nz=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d").replace(/[^a-z0-9]+/g," ").trim();
+function hit(t,txt){return t[0]==="/"?new RegExp(t.slice(1)).test(txt):(" "+txt+" ").includes(" "+nz(t)+" ")}
+
+document.getElementById("mcq").innerHTML=M.map((m,i)=>`<div class="q"><div class="sent"><span class="qn">${i+1}.</span><b>${m[0]}</b></div>${m[1].map((s,j)=>`<button class="opt" data-j="${j}"><span class="l">${L[j]}.</span>${s}</button>`).join("")}<div class="fb"></div></div>`).join("");
+document.querySelectorAll("#mcq .q").forEach((q,i)=>{
+  const m=M[i],opts=[...q.querySelectorAll(".opt")],fb=q.querySelector(".fb");
+  opts.forEach(b=>b.onclick=()=>{const j=+b.dataset.j,g=j===m[2];
+    opts.forEach(o=>o.disabled=true);opts[m[2]].classList.add("ok");if(!g)b.classList.add("no");
+    fb.className="fb show "+(g?"ok":"no");
+    fb.innerHTML=`<strong class="${g?"ok":"no"}">${g?"Chính xác!":"Chưa đúng."}</strong> Đáp án đúng: <b>${L[m[2]]}</b><div class="mut">${m[3]}</div>`;
+    mark(g)});
+});
+
+document.getElementById("essay").innerHTML=A.map((a,i)=>`<div class="q"><div class="sent"><span class="qn">${i+1}.</span>${a[0]}</div>
+<div class="row"><textarea aria-label="Câu ${i+1}" placeholder="Câu trả lời của bạn…"></textarea><button class="go">Kiểm tra</button></div><div class="fb"></div></div>`).join("");
+document.querySelectorAll("#essay .q").forEach((q,i)=>{
+  const a=A[i],inp=q.querySelector("textarea"),fb=q.querySelector(".fb"),btn=q.querySelector("button");
+  const run=()=>{const txt=nz(inp.value);if(!txt||inp.disabled)return;
+    const g=a[2].filter(gr=>gr.some(t=>hit(t,txt))).length>=a[3];
+    inp.disabled=btn.disabled=true;inp.classList.add(g?"ok":"no");
+    fb.className="fb show "+(g?"ok":"no");
+    fb.innerHTML=`<strong class="${g?"ok":"no"}">${g?"Chính xác!":"Chưa đúng."}</strong><div class="ans">${a[1]}</div><div class="mut">${a[4]}</div>`;
+    mark(g)};
+  btn.onclick=run;inp.onkeydown=ev=>{if(ev.key==="Enter"&&!ev.shiftKey){ev.preventDefault();run()}};
+});
+
+/* lá sen và hoa sen */
+function leaf(id,c1,c2,seed){let h=`<defs><radialGradient id="${id}g" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></radialGradient></defs><path d="M100 100L${100+92*Math.cos(.15)} ${100+92*Math.sin(.15)}A92 92 0 1 1 ${100+92*Math.cos(-.15)} ${100+92*Math.sin(-.15)}Z" fill="url(#${id}g)" opacity=".95"/><g stroke="#fff" stroke-width="1.2" opacity=".55" fill="none">`;for(let i=0;i<11;i++){const a=.5+i*(5.3/10);h+=`<path d="M100 100L${100+88*Math.cos(a)} ${100+88*Math.sin(a)}"/>`}document.getElementById(id).innerHTML=h+"</g>"}
+leaf("a1","#c9e05a","#5fae3c");leaf("a2","#b6d84a","#4f9a3a");leaf("a3","#d7e56a","#7cb23a");
+function lotus(id){let h="";[[-48,"#ff4f9a",.9],[48,"#ff4f9a",.9],[-24,"#ff7ab8",.95],[24,"#ff7ab8",.95],[0,"#ffa6cf",1]].forEach(([r,c,o])=>{h+=`<ellipse cx="60" cy="52" rx="14" ry="38" fill="${c}" opacity="${o}" transform="rotate(${r} 60 90)"/>`});document.getElementById(id).innerHTML=h+`<circle cx="60" cy="86" r="7" fill="#ffd54a"/>`}
+lotus("b1");lotus("b2");
+const els=[["a1",.06,.01],["a2",-.1,-.012],["a3",-.05,.008],["b1",.12,-.02],["b2",-.08,.02]].map(x=>[document.getElementById(x[0]),x[1],x[2]]);
+addEventListener("scroll",()=>{const y=scrollY;els.forEach(([e,s,r])=>e.style.transform=`translateY(${y*s}px) rotate(${y*r}deg)`)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.06});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
